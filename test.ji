@@ -1,0 +1,7 @@
+This is a test
+
+The text on the following line should say "Hello World"
+{{hw}}
+
+The following should have Name == Bert
+My name is {{name}}
