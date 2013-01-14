@@ -1,0 +1,40 @@
+{
+"job": {
+    "compute_nodes": {
+      "compute1": {
+        "name": "compute1", 
+        "ip": "192.168.25.21", 
+        "power_type": "ucs", 
+        "fqdn": "compute1.twentyfive.lab", 
+        "power_user": "admin", 
+        "mac": "00:25:B5:00:05:AF", 
+        "power_address": "192.168.26.18", 
+        "power_id": "OSonOS3", 
+        "power_password": "C1sc01234"
+      }, 
+      "compute2": {
+        "name": "compute2", 
+        "ip": "192.168.25.22", 
+        "power_type": "ucs", 
+        "fqdn": "compute2.twentyfive.lab", 
+        "power_user": "admin", 
+        "mac": "00:25:B5:00:05:9F", 
+        "power_address": "192.168.26.18", 
+        "power_id": "OSonOS4", 
+        "power_password": "C1sc01234"
+      }
+    }, 
+    "control_node": {
+      "ip": "192.168.25.10", 
+      "fqdn": "control.twentyfive.lab"
+    }, 
+    "build_node": {
+      "name": "build-os", 
+      "fqdn": "build-os-25.twentyfive.lab"
+    }
+  }, 
+  "config": {
+    "ntp_server": "192.168.25.1", 
+    "proxy": "192.168.25.254:3142"
+  }
+}
