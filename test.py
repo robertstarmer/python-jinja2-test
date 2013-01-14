@@ -1,8 +1,8 @@
 #!/usr/bin/python
-import json
+import yaml
 from jinja2 import Template, Environment, FileSystemLoader
 
-test = json.load(open("test.json"))
+test = yaml.load(open("test.json"))
 env = Environment(loader=FileSystemLoader('./'))
 template = env.get_template('site.pp.jinja')
 

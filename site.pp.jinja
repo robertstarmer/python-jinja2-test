@@ -4,7 +4,7 @@ $proxy			= "{{ config.proxy }}"
 $build_node_name        = "{{ job.build_node.name }}"
 $company_ntp_server	= "{{ config.ntp_server }}"
 #{% for node in job.compute_nodes %}
-  cobbler_node { "{{ node.name }}": node_type => "compute", mac => "{{ node.mac }}", ip => "{{ node.ip }}", power_address  => "{{ node.power_address }}", power_user => "{{ node.power_user }}", power_password => "{{ node.power_password }}", power_type => "{{ node.power_type }}", power_id => "{{ node.power_id }}" }
+  cobbler_node { "{{ job.compute_nodes[node].name }}": node_type => "compute", mac => "{{ job.compute_nodes[node].mac }}", ip => "{{ job.compute_nodes[node].ip }}", power_address  => "{{ job.compute_nodes[node].power_address }}", power_user => "{{ job.compute_nodes[node].power_user }}", power_password => "{{ job.compute_nodes[node].power_password }}", power_type => "{{ job.compute_nodes[node].power_type }}", power_id => "{{ job.compute_nodes[node].power_id }}" }
 #{% endfor %}
 
 # Change control_server to the host name of your control node
@@ -14,6 +14,6 @@ node /{{ job.control_node.fqdn }}/ inherits os_base { class { control: crosstalk
 #{% for node in job.compute_nodes  %}
 {{node}}
 {{node.ip}}
-node /{{ node.fqdn }}/ inherits os_base { class { compute: internal_ip => '{{ node.ip }}', crosstalk_ip => '{{ node.ip }}'} }
+node /{{ job.compute_nodes[node].fqdn }}/ inherits os_base { class { compute: internal_ip => '{{ job.compute_nodes[node].ip }}', crosstalk_ip => '{{ job.compute_nodes[node].ip }}'} }
 #{% endfor %}
 
