@@ -1,26 +1,10 @@
 config:
-  proxy: ''
+  proxy: '192.168.25.254:3142'
   ntp_server: '192.168.25.1'
-  subnet: '192.168.25.0'
-  subnet_as_sql: '192.168.25.%'
-  netmask: '255.255.255.0'
-  gateway: '192.168.25.1'
-  domain: 'twentyfive.lab'
-  admin_user: 'localadmin'
-  password_crypted: '$6$UfgWxrIv$k4KfzAEMqMg.fppmSOTd0usI4j6gfjs0962.JXsoJRWa5wMz8yQk4SfInn4.WZ3L/MCt5u.62tHDGB36EhiKF1'
 job:
-  description:
-    ubuntu_series: 'precise'
   control_node:
     ip: '192.168.25.10'
-    name: 'control'
     fqdn: 'control.twentyfive.lab'
-    mac: '00:25:B5:00:05:0F'
-    power_address: '192.168.26.18'
-    power_user: 'admin'
-    power_password: 'C1sc01234'
-    power_type: 'ucs'
-    power_id: 'OSonOS2'
   compute_nodes:
     compute1:
       ip: '192.168.25.21'
@@ -42,25 +26,6 @@ job:
       power_password: 'C1sc01234'
       power_type: 'ucs'
       power_id: 'OSonOS4'
-    compute3:
-      ip: '192.168.25.23'
-      name: 'compute3'
-      fqdn: 'compute3.twentyfive.lab'
-      mac: '00:25:B5:00:05:7F'
-      power_address: '192.168.26.18'
-      power_user: 'admin'
-      power_password: 'C1sc01234'
-      power_type: 'ucs'
-      power_id: 'OSonOS5'
-    compute4:
-      ip: '192.168.25.24'
-      name: 'compute4'
-      fqdn: 'compute4.twentyfive.lab'
-      mac: '00:25:B5:00:05:5F'
-      power_address: '192.168.26.18'
-      power_user: 'admin'
-      power_password: 'C1sc01234'
-      power_type: 'ucs'
-      power_id: 'OSonOS6'
   build_node:
+    name: 'build-os'
     fqdn: 'build-os-25.twentyfive.lab'
